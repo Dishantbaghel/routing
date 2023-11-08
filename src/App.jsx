@@ -5,7 +5,7 @@ import Contact from './pages/Contact'
 import {Routes,Route} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Messages from './pages/Messages'
-import MsgData from './pages/MsgData'
+import DisplayMsg from './pages/DisplayMsg'
 
 const App = () => {
   return (
@@ -18,9 +18,7 @@ const App = () => {
         <Route path='/messages' element={<Messages/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<Contact/>} />
-        <Route path='/message1/:msg' element={<MsgData/>} />
-        <Route path='/message2/:msg' element={<MsgData/>} />
-        <Route path='/message3/:msg' element={<MsgData/>} />
+        <Route path='/Message/:msgId' element={<DisplayMsg/>} />
     </Routes>
     </div>
   )

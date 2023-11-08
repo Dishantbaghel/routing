@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import {MsgData} from '../assets/MsgData'
 
 const Messages = () => {
+  const [msg,setMsg] = useState(MsgData)
   return (
     <div>
+    <ul>
         <h1>Welcome to Message Page.</h1>
-        <ul>
-            <li><Link to="/message1/msg1">Message 1</Link></li>
-            <li><Link to="/message2/msg2">Message 2</Link></li>
-            <li><Link to="/message3/msg3">Message 3</Link></li>
-        </ul>
+        {msg.map((item)=>(
+          <div key={item.id}>
+            <li ><Link to={`/Message/${item.id}`}>{item.title}</Link></li>
+          </div>
+        ))}
+    </ul>
     </div>
   )
 }
